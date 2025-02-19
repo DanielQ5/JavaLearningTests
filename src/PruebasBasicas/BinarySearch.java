@@ -84,7 +84,6 @@ public class BinarySearch {
     public static void binarySearch(int[] mainListArray) {
         System.out.print("\nPlease enter the number you want to search:");
         Scanner scan = new Scanner(System.in);
-        Arrays.sort(mainListArray);
         int numberToFind = scan.nextInt(); //
         int lowPointIndex = 0;
         int highPointIndex = mainListArray.length - 1;
@@ -99,23 +98,24 @@ public class BinarySearch {
                 System.out.println("\nWhat do you want to do next? Please select an option:");
                 System.out.println("1. I want to search for another number:");
                 System.out.println("2. I want to Exit.");
+                return;
 
             }
-            else if (lowPointIndex == highPointIndex){ //
-                System.out.println("We're sorry, we didn't find your number");
+            else if (lowPointIndex == highPointIndex){
+                System.out.println("\nWe're sorry, we didn't find your number");
+                System.out.println("\nWhat do you want to do next? Please select an option:");
+                System.out.println("1. I want to search for another number:");
+                System.out.println("2. I want to Exit.");
                 return;
             }
-
             if (numberToFind < middleNumber) { // Jump, since this condition is not met.
-                highPointIndex = middlePosition ;
+                highPointIndex = middlePosition - 1 ;
 
             } else {
                 lowPointIndex = middlePosition + 1;
             }
-
         }
     }
-
 }
 
 
