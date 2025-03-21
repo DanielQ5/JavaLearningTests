@@ -92,7 +92,6 @@ public class LinkedListNode {
         int val = tail.value;
         tail = secondLast;
         tail.next = null;
-
         return val;
     }
 

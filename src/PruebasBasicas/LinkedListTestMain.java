@@ -19,6 +19,7 @@ Implement a method to reverse the linked list.
 Implement a search function that returns the position of a given element in the list.*/
 
 package PruebasBasicas;
+
 import java.util.Scanner;
 
 
@@ -115,7 +116,6 @@ public class LinkedListTestMain {
                 scanner.next();
             }
         }
-
     }
 
     public static void showMenu() {
@@ -126,7 +126,6 @@ public class LinkedListTestMain {
         System.out.println("4. I want to remove elements from the list at a specific position.");
         System.out.println("5. I want to display the list.");
         System.out.println("6. I want to exit the program.");
-
     }
 }
 
