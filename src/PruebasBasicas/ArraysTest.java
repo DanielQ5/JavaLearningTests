@@ -89,7 +89,6 @@ public class ArraysTest {
         }
     }
 
-
     public static void findMaxValue(int[] mainListArray) {
         int maxValue = mainListArray[0];
         for (int i : mainListArray) {

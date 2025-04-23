@@ -65,12 +65,12 @@ public class Calculadora {
                     break;
 
                 case 5:
-                    System.exit(0) ;
+                    System.exit(0);
                     break;
 
                 default:
                     System.out.println("Por favor ingresa una opcion dentro del menu.");
-                    System.exit(0) ;
+                    System.exit(0);
 
             }
 

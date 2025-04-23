@@ -24,6 +24,7 @@ public class BubbleSort {
 
         int arraySize = -1;
 
+
         Scanner scanner = new Scanner(System.in);
 
         while (arraySize <= 0) {
