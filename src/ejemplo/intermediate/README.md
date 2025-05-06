@@ -25,6 +25,7 @@ Create a program that allows users to register multiple employees, validate thei
   - If salary is above the upper limit, apply a 15% deduction.
 -Store employee data in a dynamic collection.
 -After all entries, print a detailed summary showing all employee information and final net salaries.
+-Main method in Payroll Deduction Calculator
 
 **Solution:**  
 The program uses:
