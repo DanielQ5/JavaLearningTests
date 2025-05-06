@@ -27,7 +27,6 @@ Create a program that allows users to register multiple employees, validate thei
 -After all entries, print a detailed summary showing all employee information and final net salaries.
 -Main method in Payroll Deduction Calculator
 
-
 **Solution:**  
 The program uses:
 -`Scanner` for user input.
