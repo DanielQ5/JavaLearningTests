@@ -13,6 +13,8 @@ It allows the user to enter multiple employees' data (name, department, and sala
 The system uses `ArrayList` to store dynamic data, nested loops for flow control, and `BigDecimal` for accurate financial calculations.
 This exercise helps reinforce input validation, data modeling, and program structure at an intermediate level.
 
+Main method in Payroll Deduction Calculator
+
 **Documentation**:
 Create a program that allows users to register multiple employees, validate their inputs, and calculate salary deductions based on predefined income ranges. The goal is to simulate a real-world payroll processing system and apply proper structure, error handling, and precision in financial calculations.
 
@@ -25,6 +27,7 @@ Create a program that allows users to register multiple employees, validate thei
   - If salary is above the upper limit, apply a 15% deduction.
 -Store employee data in a dynamic collection.
 -After all entries, print a detailed summary showing all employee information and final net salaries.
+
 
 **Solution:**  
 The program uses:
