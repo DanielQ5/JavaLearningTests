@@ -12,6 +12,7 @@ This project simulates an employee registration and payroll deduction system.
 It allows the user to enter multiple employees' data (name, department, and salary), validates each input, calculates deductions based on salary thresholds, and displays a summary of each employee.
 The system uses `ArrayList` to store dynamic data, nested loops for flow control, and `BigDecimal` for accurate financial calculations.
 This exercise helps reinforce input validation, data modeling, and program structure at an intermediate level.
+
 Main method in Payroll Deduction Calculator
 
 **Documentation**:
