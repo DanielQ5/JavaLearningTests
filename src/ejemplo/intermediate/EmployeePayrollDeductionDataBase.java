@@ -1,4 +1,4 @@
-package IntermediateTests;
+package ejemplo.intermediate;
 
 
 import lombok.Getter;
@@ -24,7 +24,7 @@ public class EmployeePayrollDeductionDataBase {
     private double deductionAmount;
     private double netSalary;
 
-    public void enteringMultipleEmployeeData(Scanner scanner, ArrayList<NewEmployee> newEmployee) {
+    public void enteringMultipleEmployeeData(Scanner scanner, ArrayList<Employee> employee) {
 
         String eeName;
         boolean isValidNameEntered = false;
@@ -83,13 +83,13 @@ public class EmployeePayrollDeductionDataBase {
             }
         }
 
-        NewEmployee newEmployeeAdditions = new NewEmployee(eeName, eeDepartment, eeSalary);
-        calculateDeductions(newEmployeeAdditions);
+        Employee employeeAdditions = new Employee(eeName, eeDepartment, eeSalary);
+        calculateDeductions(employeeAdditions);
 
-        newEmployee.add(newEmployeeAdditions);
+        employee.add(employeeAdditions);
     }
 
-    public boolean additionalEmployeeValidationLoop(Scanner scanner, ArrayList<NewEmployee> newEmployee) {
+    public boolean additionalEmployeeValidationLoop(Scanner scanner, ArrayList<Employee> employee) {
 
         boolean continueLoop = true;
 
@@ -103,7 +103,7 @@ public class EmployeePayrollDeductionDataBase {
                 continueLoop = false;
                 isValidInput = true;
                 System.out.println("\nThank you! The list you have entered is:");
-                for (NewEmployee tempEmployee : newEmployee) {
+                for (Employee tempEmployee : employee) {
                     printSummary(tempEmployee);
                     System.out.println("---------------------------");
                 }
@@ -121,10 +121,10 @@ public class EmployeePayrollDeductionDataBase {
         return false;
     }
 
-    public void calculateDeductions(NewEmployee newEmployee) {
-        if (newEmployee.getGrossSalary() > LOWER_LIMIT_SALARY_VALUE && newEmployee.getGrossSalary() < HIGHER_LIMIT_SALARY_VALUE) {
-            deductionAmount = newEmployee.getGrossSalary() * LOWER_LIMIT_DEDUCTION_PERCENTAGE;
-            netSalary = newEmployee.getGrossSalary() - deductionAmount;
+    public void calculateDeductions(Employee employee) {
+        if (employee.getGrossSalary() > LOWER_LIMIT_SALARY_VALUE && employee.getGrossSalary() < HIGHER_LIMIT_SALARY_VALUE) {
+            deductionAmount = employee.getGrossSalary() * LOWER_LIMIT_DEDUCTION_PERCENTAGE;
+            netSalary = employee.getGrossSalary() - deductionAmount;
 
             BigDecimal netSalaryWith2Decimals = new BigDecimal(netSalary);
             netSalaryWith2Decimals = netSalaryWith2Decimals.setScale(2, RoundingMode.HALF_UP);
@@ -134,9 +134,9 @@ public class EmployeePayrollDeductionDataBase {
             deductionAmountWith2Decimals = deductionAmountWith2Decimals.setScale(2, RoundingMode.HALF_UP);
             deductionAmount = deductionAmountWith2Decimals.doubleValue();
 
-        } else if (newEmployee.getGrossSalary() > HIGHER_LIMIT_SALARY_VALUE) {
-            deductionAmount = newEmployee.getGrossSalary() * HIGHER_LIMIT_DEDUCTION_PERCENTAGE;
-            netSalary = newEmployee.getGrossSalary() - deductionAmount;
+        } else if (employee.getGrossSalary() > HIGHER_LIMIT_SALARY_VALUE) {
+            deductionAmount = employee.getGrossSalary() * HIGHER_LIMIT_DEDUCTION_PERCENTAGE;
+            netSalary = employee.getGrossSalary() - deductionAmount;
 
             BigDecimal netSalaryWith2Decimals = new BigDecimal(netSalary);
             netSalaryWith2Decimals = netSalaryWith2Decimals.setScale(2, RoundingMode.HALF_UP);
@@ -147,14 +147,14 @@ public class EmployeePayrollDeductionDataBase {
             deductionAmount = deductionAmountWith2Decimals.doubleValue();
 
         } else {
-            netSalary = newEmployee.getGrossSalary();
+            netSalary = employee.getGrossSalary();
         }
     }
 
-    public void printSummary(NewEmployee newEmployee) {
-        System.out.println("Employee Name: " + newEmployee.getName());
-        System.out.println("Department: " + newEmployee.getDepartment());
-        System.out.println("Gross Salary: " + "$" + newEmployee.getGrossSalary());
+    public void printSummary(Employee employee) {
+        System.out.println("Employee Name: " + employee.getName());
+        System.out.println("Department: " + employee.getDepartment());
+        System.out.println("Gross Salary: " + "$" + employee.getGrossSalary());
         System.out.println("Deduction Amount: " + "$" + deductionAmount);
         System.out.println("Net Salary: " + "$" + netSalary);
     }

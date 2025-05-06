@@ -28,7 +28,7 @@ Make the output clear and formatted nicely.
 Use Scanner for input.
 Bonus: Use continue or break smartly for flow control.*/
 
-package IntermediateTests;
+package ejemplo.intermediate;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -42,14 +42,14 @@ public class PayrollDeductionCalculator {
         System.out.println("Start by entering Employee information.");
 
         Scanner scanner = new Scanner(System.in);
-        ArrayList<NewEmployee> newEmployeeInitialInput = new ArrayList<>();
+        ArrayList<Employee> employeeInitialInput = new ArrayList<>();
         EmployeePayrollDeductionDataBase employeePayrollDeductionDataBase = new EmployeePayrollDeductionDataBase();
 
         boolean continueLoop = true;
         while (continueLoop) {
 
-            employeePayrollDeductionDataBase.enteringMultipleEmployeeData(scanner, newEmployeeInitialInput);
-            continueLoop = employeePayrollDeductionDataBase.additionalEmployeeValidationLoop(scanner, newEmployeeInitialInput);
+            employeePayrollDeductionDataBase.enteringMultipleEmployeeData(scanner, employeeInitialInput);
+            continueLoop = employeePayrollDeductionDataBase.additionalEmployeeValidationLoop(scanner, employeeInitialInput);
 
         }
 
