@@ -42,7 +42,7 @@ public class PayrollDeductionCalculator {
         System.out.println("Start by entering Employee information.");
 
         Scanner scanner = new Scanner(System.in);
-        ArrayList<EmployeePayrollDeductionDataBase.NewEmployee> newEmployeeInitialInput = new ArrayList<>();
+        ArrayList<NewEmployee> newEmployeeInitialInput = new ArrayList<>();
         EmployeePayrollDeductionDataBase employeePayrollDeductionDataBase = new EmployeePayrollDeductionDataBase();
 
         boolean continueLoop = true;
