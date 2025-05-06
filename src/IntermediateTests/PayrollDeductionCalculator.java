@@ -52,5 +52,6 @@ public class PayrollDeductionCalculator {
             continueLoop = employeePayrollDeductionDataBase.additionalEmployeeValidationLoop(scanner, newEmployeeInitialInput);
 
         }
+
     }
 }
