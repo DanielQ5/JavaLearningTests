@@ -33,7 +33,7 @@ package ejemplo.intermediate;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class PayrollDeductionCalculator {
+public class PayrollDeductionCalculatorMain {
 
 
     public static void main(String[] args) {
