@@ -1,4 +1,4 @@
-//Diseña un programa que realice las siguientes operaciones con números enteros:
+package com.javalearningtests.pruebasbasicas;//Diseña un programa que realice las siguientes operaciones con números enteros:
 //
 //1.Determinar si un número es par o impar.
 //2.Calcular el factorial de un número.
@@ -14,8 +14,6 @@
 //2.El programa debe contener un menú interactivo que permita al usuario seleccionar la operación que desea realizar.
 //3.Si el usuario selecciona un número inválido, muestra un mensaje de error y vuelve al menú.
 //4.La opción para salir del programa debe estar incluida en el menú.
-
-package PruebasBasicas;
 
 import java.util.Scanner;
 

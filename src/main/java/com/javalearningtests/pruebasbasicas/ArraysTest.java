@@ -1,6 +1,4 @@
-package PruebasBasicas;
-
-//Instructions
+package com.javalearningtests.pruebasbasicas;//Instructions
 //Write a Java program that allows the user to perform the following operations on an array of integers:
 //
 //1.Initialize an Array: Allow the user to input the size of the array and fill it with numbers.

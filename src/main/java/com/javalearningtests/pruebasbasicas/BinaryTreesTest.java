@@ -1,4 +1,4 @@
-/*Scenario:
+package com.javalearningtests.pruebasbasicas;/*Scenario:
 You are working as a software developer for a logistics company that manages package deliveries.
 The company wants to optimize package tracking by using a binary tree to store package IDs efficiently.
 Each package has a unique tracking number, and they need to be stored in a way that allows fast searching, insertion, and removal.
@@ -25,8 +25,6 @@ void delete(int trackingNumber): Removes a package from the tree.
 void inOrderTraversal(): Prints package IDs in ascending order.
 void preOrderTraversal(): Prints package IDs in pre-order.
 void postOrderTraversal(): Prints package IDs in post-order. */
-
-package PruebasBasicas;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-//Objective:
+package com.javalearningtests.pruebasbasicas;//Objective:
 //Implement the Bubble Sort algorithm to sort an array of numbers. The program should:
 //
 //1.Ask the user for the array size and elements.
@@ -10,8 +10,6 @@
 //1.Modify the algorithm to allow sorting in both ascending and descending order based on user choice.
 //2.Display execution time for sorting.
 //TODO Test how to swap two variables without the usage of a temp variable
-
-package PruebasBasicas;
 
 import java.util.Arrays;
 import java.util.Scanner;

@@ -1,4 +1,4 @@
-/*Objective:
+package com.javalearningtests.pruebasbasicas;/*Objective:
 Understand and implement Linked Lists in Java, covering insertion, deletion, and traversal operations.
 
 Requirements:
@@ -17,8 +17,6 @@ Exit the program.
 Bonus Challenge:
 Implement a method to reverse the linked list.
 Implement a search function that returns the position of a given element in the list.*/
-
-package PruebasBasicas;
 
 import java.util.Scanner;
 

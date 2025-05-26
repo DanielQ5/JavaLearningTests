@@ -1,4 +1,4 @@
-package PruebasBasicas;
+package com.javalearningtests.pruebasbasicas;
 
 public class LinkedListNode {
 

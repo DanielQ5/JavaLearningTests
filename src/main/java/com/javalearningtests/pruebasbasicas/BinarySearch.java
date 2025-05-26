@@ -1,4 +1,4 @@
-//Objective:
+package com.javalearningtests.pruebasbasicas;//Objective:
 //Implement a Binary Search algorithm that efficiently finds an element in a sorted array.
 //
 //Requirements:
@@ -11,8 +11,6 @@
 //If the number is not found, display an appropriate message.
 //Include proper exception handling for invalid inputs.
 //Allow the user to search multiple times until they choose to exit.
-
-package PruebasBasicas;
 
 import java.util.Arrays;
 import java.util.Scanner;

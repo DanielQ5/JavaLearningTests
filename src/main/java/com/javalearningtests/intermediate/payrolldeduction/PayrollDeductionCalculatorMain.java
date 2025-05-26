@@ -1,3 +1,4 @@
+package com.javalearningtests.intermediate.payrolldeduction;
 /*As an HR officer,
 I want a program where I can input an employee's salary and see deductions applied based on salary ranges,
 So that I can quickly calculate their net take-home pay.
@@ -27,8 +28,6 @@ Make the output clear and formatted nicely.
 
 Use Scanner for input.
 Bonus: Use continue or break smartly for flow control.*/
-
-package com.javalearningtests.intermediate.employeedeductionpayrollprogram;
 
 import java.util.ArrayList;
 import java.util.Scanner;

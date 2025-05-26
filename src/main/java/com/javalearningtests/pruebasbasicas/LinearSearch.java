@@ -1,4 +1,4 @@
-//Requirements:
+package com.javalearningtests.pruebasbasicas;//Requirements:
 //1.The user should input the size of the array and then enter the elements.
 //2.The program should allow the user to input a number to search for in the array.
 //3.Implement the Linear Search Algorithm to find the number.
@@ -6,8 +6,6 @@
 //5.Ensure proper handling of invalid inputs (non-integer values, out-of-bounds errors, etc.).
 //6.The program should allow multiple searches without restarting.
 //7.The user should have an option to exit.
-
-package PruebasBasicas;
 
 import java.util.Arrays;
 import java.util.Scanner;
