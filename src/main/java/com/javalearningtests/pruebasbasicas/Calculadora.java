@@ -1,6 +1,4 @@
-package PruebasBasicas;
-
-//Crea un programa que actúe como una calculadora básica. El programa debe:
+package com.javalearningtests.pruebasbasicas;//Crea un programa que actúe como una calculadora básica. El programa debe:
 //
 //Solicitar al usuario dos números.
 //Mostrar un menú de operaciones disponibles:
@@ -21,7 +19,7 @@ public class Calculadora {
 
     public static void main(String[] args) {
 
-        System.out.println("-------Bienvenido al Programa de Calculadora---------");
+        System.out.println("-------Bienvenido al Programa de com.javalearningtests.pruebasbasicas.Calculadora---------");
 
 
         System.out.println("\n Ingresa tu primer numero: ");

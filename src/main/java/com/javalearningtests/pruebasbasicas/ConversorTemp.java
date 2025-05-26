@@ -1,6 +1,4 @@
-package PruebasBasicas;
-
-//Escribe un programa que permita al usuario seleccionar una opción de un menú para convertir temperaturas:
+package com.javalearningtests.pruebasbasicas;//Escribe un programa que permita al usuario seleccionar una opción de un menú para convertir temperaturas:
 //
 //Convertir de Celsius a Fahrenheit.
 //Convertir de Fahrenheit a Celsius.

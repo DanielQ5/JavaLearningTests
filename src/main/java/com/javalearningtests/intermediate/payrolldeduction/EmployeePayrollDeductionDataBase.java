@@ -1,4 +1,4 @@
-package com.javalearningtests.intermediate.employeedeductionpayrollprogram;
+package com.javalearningtests.intermediate.payrolldeduction;
 
 
 import lombok.Getter;

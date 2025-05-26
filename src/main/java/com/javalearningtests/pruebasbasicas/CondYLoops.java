@@ -1,5 +1,4 @@
-package PruebasBasicas;//Enunciado:
-//Crea un programa que reciba un número entero ingresado por el usuario y
+package com.javalearningtests.pruebasbasicas;//Crea un programa que reciba un número entero ingresado por el usuario y
 // realice las siguientes acciones:
 //
 //Si el número es par, imprime todos los números pares desde 0 hasta ese número.
