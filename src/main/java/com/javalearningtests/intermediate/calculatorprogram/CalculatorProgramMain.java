@@ -1,5 +1,6 @@
 package com.javalearningtests.intermediate.calculatorprogram;
 
+
 import java.util.Scanner;
 
 public class CalculatorProgramMain {
@@ -8,6 +9,7 @@ public class CalculatorProgramMain {
         System.out.println("This program allows you to make calculations and log results into a file for future handling");
 
         Scanner scanner = new Scanner(System.in);
+        CalculatorProgramFileManager calculatorProgramFileManager = new CalculatorProgramFileManager();
 
         CalculatorProgramMethods.showMenu();
 
@@ -22,32 +24,32 @@ public class CalculatorProgramMain {
 
                 switch (menuSelection) {
                     case 1:
-                        CalculatorProgramMethods.additionMethod(scanner);
+                        CalculatorProgramMethods.additionMethod(scanner, calculatorProgramFileManager);
                         CalculatorProgramMethods.showMenu();
                         break;
 
                     case 2:
-                        CalculatorProgramMethods.substractionMethod(scanner);
+                        CalculatorProgramMethods.subtractionMethod(scanner, calculatorProgramFileManager);
                         CalculatorProgramMethods.showMenu();
                         break;
 
                     case 3:
-                        CalculatorProgramMethods.mutiplicationMethod(scanner);
+                        CalculatorProgramMethods.multiplicationMethod(scanner, calculatorProgramFileManager);
                         CalculatorProgramMethods.showMenu();
                         break;
 
                     case 4:
-                        CalculatorProgramMethods.divisionMethod(scanner);
+                        CalculatorProgramMethods.divisionMethod(scanner, calculatorProgramFileManager);
                         CalculatorProgramMethods.showMenu();
                         break;
 
                     case 5:
-                        CalculatorProgramMethods.powerMethod(scanner);
+                        CalculatorProgramMethods.powerMethod(scanner, calculatorProgramFileManager);
                         CalculatorProgramMethods.showMenu();
                         break;
 
                     case 6:
-                        CalculatorProgramMethods.squareCalculationMethod(scanner);
+                        CalculatorProgramMethods.squareCalculationMethod(scanner, calculatorProgramFileManager);
                         CalculatorProgramMethods.showMenu();
                         break;
 
