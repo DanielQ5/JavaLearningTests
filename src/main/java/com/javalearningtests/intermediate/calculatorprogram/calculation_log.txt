@@ -1,0 +1,3 @@
+Addition result is: 8.00
+Multiplication result is: 32.00
+Power result is: 72759576141834259033203125.00

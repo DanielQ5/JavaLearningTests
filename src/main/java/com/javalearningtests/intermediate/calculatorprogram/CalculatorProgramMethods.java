@@ -3,8 +3,8 @@ package com.javalearningtests.intermediate.calculatorprogram;
 import lombok.Getter;
 import lombok.Setter;
 
+
 import java.math.BigDecimal;
-import java.math.MathContext;
 import java.math.RoundingMode;
 import java.util.Scanner;
 
@@ -18,116 +18,170 @@ public class CalculatorProgramMethods {
     final static int DIVISION_NUMBER_NOT_SUPPORTED = 0;
 
 
-    public static void mutiplicationMethod(Scanner scanner) {
-        System.out.println("Please enter the first number to calculate:");
-        BigDecimal firstNumber = new BigDecimal(scanner.nextLine());
+    public static void multiplicationMethod(Scanner scanner, CalculatorProgramFileManager calculatorProgramFileManager) {
+        BigDecimal[] numbersEntered = getTwoNumbers(scanner);
 
-        System.out.println("Please enter the second number to calculate:");
-        BigDecimal secondNumber = new BigDecimal(scanner.nextLine());
+        BigDecimal result = numbersEntered[0].multiply(numbersEntered[1]);
 
-        BigDecimal result = firstNumber.multiply(secondNumber);
-        result = result.setScale(2, RoundingMode.HALF_UP);
-
-        System.out.println("The result is: " + result);
+        printAndLogResults(result, "Multiplication", calculatorProgramFileManager);
     }
 
-    public static void additionMethod(Scanner scanner) {
-        System.out.println("Please enter the first number to calculate:");
-        BigDecimal firstNumber = new BigDecimal(scanner.nextLine());
+    public static void additionMethod(Scanner scanner, CalculatorProgramFileManager calculatorProgramFileManager) {
+        BigDecimal[] numbersEntered = getTwoNumbers(scanner);
 
-        System.out.println("Please enter the second number to calculate:");
-        BigDecimal secondNumber = new BigDecimal(scanner.nextLine());
+        BigDecimal result = numbersEntered[0].add(numbersEntered[1]);
 
-        BigDecimal result = firstNumber.add(secondNumber);
-        result = result.setScale(2, RoundingMode.HALF_UP);
-
-        System.out.println("The result is: " + result);
+        printAndLogResults(result, "Addition", calculatorProgramFileManager);
     }
 
-    public static void substractionMethod(Scanner scanner) {
-        System.out.println("Please enter the first number to calculate:");
-        BigDecimal firstNumber = new BigDecimal(scanner.nextLine());
+    public static void subtractionMethod(Scanner scanner, CalculatorProgramFileManager calculatorProgramFileManager) {
+        BigDecimal[] numbersEntered = getTwoNumbers(scanner);
 
-        System.out.println("Please enter the second number to calculate:");
-        BigDecimal secondNumber = new BigDecimal(scanner.nextLine());
+        BigDecimal result = numbersEntered[0].subtract(numbersEntered[1]);
 
-        BigDecimal result = firstNumber.subtract(secondNumber);
-        result = result.setScale(2, RoundingMode.HALF_UP);
-
-        System.out.println("The result is: " + result);
+        printAndLogResults(result, "Subtraction", calculatorProgramFileManager);
     }
 
-    public static void divisionMethod(Scanner scanner) {
-        System.out.println("Please enter the first number to calculate:");
-        BigDecimal firstNumber = new BigDecimal(scanner.nextLine());
+    public static void divisionMethod(Scanner scanner, CalculatorProgramFileManager calculatorProgramFileManager) {
+        BigDecimal firstNumber = getValidNumberInput(scanner, "Please enter the first number:");
+        BigDecimal secondNumber = getValidDivisorInput(scanner);
 
-        boolean isZeroEntered = false;
-
-        do {
-            System.out.println("Please enter the second number to calculate:");
-            BigDecimal secondNumber = new BigDecimal(scanner.nextLine());
-
-            if (secondNumber.equals(BigDecimal.valueOf(DIVISION_NUMBER_NOT_SUPPORTED))) {
-                System.out.println("A division by 0 is not supported, please try again!");
-            } else {
-                BigDecimal result = firstNumber.divide(secondNumber, 2, RoundingMode.HALF_UP);
-
-                System.out.println("The result is: " + result);
-
-                isZeroEntered = true;
-
-            }
-        } while (!isZeroEntered);
+        BigDecimal result = firstNumber.divide(secondNumber, 2, RoundingMode.HALF_UP);
+        printAndLogResults(result, "Division", calculatorProgramFileManager);
     }
 
-    public static void powerMethod(Scanner scanner) {
-        System.out.println("Please enter the first number to calculate:");
-        BigDecimal firstNumber = new BigDecimal(scanner.nextLine());
+    public static void powerMethod(Scanner scanner, CalculatorProgramFileManager calculatorProgramFileManager) {
 
-        System.out.println("Please enter the number you want to power the first one to:");
-        BigDecimal powerNumber = new BigDecimal(scanner.nextLine());
-
-        BigDecimal powerResult = firstNumber.pow(Integer.parseInt(String.valueOf(powerNumber)));
-
-        powerResult = powerResult.setScale(2, RoundingMode.HALF_UP);
-
-        System.out.println("The result is: " + powerResult);
+        BigDecimal firstNumber = getValidNumberInput(scanner, "Please enter the first number:");
+        int secondNumber = validNumberForPowerInput(scanner, "Please enter the number you want to raise first number to:");
+        BigDecimal result = firstNumber.pow(secondNumber);
+        printAndLogResults(result, "Power", calculatorProgramFileManager);
     }
 
-    public static void squareCalculationMethod(Scanner scanner) {
+    public static void squareCalculationMethod(Scanner scanner, CalculatorProgramFileManager calculatorProgramFileManager) {
 
-        System.out.println("Please enter the number to calculate:");
-        BigDecimal numberToCalculate = new BigDecimal(scanner.nextLine());
+        BigDecimal numberToCalculate = getPositiveNumberSqrt(scanner, "Please enter the number to calculate:");
 
-        BigDecimal sqrtCalculation = BigDecimal.valueOf(Math.sqrt(Double.parseDouble(String.valueOf(numberToCalculate))));
+        BigDecimal result = calculateSquareRoot(numberToCalculate);
 
-        sqrtCalculation = sqrtCalculation.setScale(2, RoundingMode.HALF_UP);
-
-        System.out.println("The result is: " + sqrtCalculation);
-
+        printAndLogResults(result, "Square Root", calculatorProgramFileManager);
     }
 
     public static void showMenu() {
 
         System.out.println("\nWhat action do you want to perform? : (Please choose an option from the menu)");
-        System.out.println("1. I want to Add two numbers:");
-        System.out.println("2. I want to Subtract two numbers:");
-        System.out.println("3. I want to Multiply two numbers:");
-        System.out.println("4. I want to Divide two numbers:");
-        System.out.println("5. I want to raise Power of a number by another number:");
-        System.out.println("6. I want to calculate the Square Root of a number:");
-        System.out.println("7. I want to Exit:");
+        System.out.println("1. Add two numbers:");
+        System.out.println("2. Subtract two numbers:");
+        System.out.println("3. Multiply two numbers:");
+        System.out.println("4. Divide two numbers:");
+        System.out.println("5. Raise a Number to Power:");
+        System.out.println("6. Calculate square root:");
+        System.out.println("7. Exit:");
 
     }
 
-    public static BigDecimal subtract(BigDecimal firstNumber, BigDecimal secondNumber) {
-        BigDecimal result = firstNumber.subtract(secondNumber);
-        return result.setScale(2, RoundingMode.HALF_UP);
+//    public static BigDecimal subtract(BigDecimal firstNumber, BigDecimal secondNumber) {
+//        BigDecimal result = firstNumber.subtract(secondNumber);
+//        return result.setScale(2, RoundingMode.HALF_UP);
+//    }
+//
+//    public static BigDecimal add(BigDecimal firstNumber, BigDecimal secondNumber) {
+//        BigDecimal result = firstNumber.add(secondNumber);
+//        return result.setScale(2, RoundingMode.HALF_UP);
+//    }
+
+    private static BigDecimal[] getTwoNumbers(Scanner scanner) {
+        BigDecimal firstNumber = getValidNumberInput(scanner, "Please enter the first number to calculate:");
+        BigDecimal secondNumber = getValidNumberInput(scanner, "Please enter the second number to calculate:");
+        return new BigDecimal[]{firstNumber, secondNumber};
     }
 
-    public static BigDecimal add(BigDecimal firstNumber, BigDecimal secondNumber) {
-        BigDecimal result = firstNumber.add(secondNumber);
-        return result.setScale(2, RoundingMode.HALF_UP);
+    private static void printAndLogResults(BigDecimal result, String operation, CalculatorProgramFileManager calculatorProgramFileManager) {
+        result = result.setScale(2, RoundingMode.HALF_UP);
+        System.out.println("The result is: " + result);
+        calculatorProgramFileManager.logResult(operation + " result is: " + result);
+    }
+
+    private static BigDecimal getValidNumberInput(Scanner scanner, String promptUser) {
+        BigDecimal numberEntered = null;
+        boolean validInputReceived = false;
+
+        while (!validInputReceived) {
+            try {
+                System.out.println(promptUser);
+                String userInput = scanner.nextLine();
+                numberEntered = new BigDecimal(userInput);
+                validInputReceived = true;
+            } catch (NumberFormatException e) {
+                System.out.println("Error, please enter a valid number.");
+            }
+        }
+        return numberEntered;
+    }
+
+    private static BigDecimal getValidDivisorInput(Scanner scanner) {
+        BigDecimal numberEntered;
+
+        do {
+            numberEntered = getValidNumberInput(scanner, "Please enter the second number:");
+
+            if (numberEntered.equals(BigDecimal.valueOf(DIVISION_NUMBER_NOT_SUPPORTED))) {
+                System.out.println("A division by 0 is not supported, please try again!");
+            }
+        } while (numberEntered.equals(BigDecimal.valueOf(DIVISION_NUMBER_NOT_SUPPORTED)));
+
+        return numberEntered;
+
+    }
+
+    private static int validNumberForPowerInput(Scanner scanner, String prompt) {
+        boolean isValidNumberEntered = false;
+        int powerNumber = 0;
+
+        while (!isValidNumberEntered) {
+            try {
+                System.out.println(prompt);
+                String powerInput = scanner.nextLine().trim();
+                powerNumber = Integer.parseInt(powerInput);
+                isValidNumberEntered = true;
+            } catch (NumberFormatException e) {
+                System.out.println("Error. Please enter a valid Number to Raise Power");
+            }
+        }
+
+        return powerNumber;
+    }
+
+    private static BigDecimal getPositiveNumberSqrt(Scanner scanner, String promptUser) {
+        BigDecimal numberEntered;
+
+        do {
+            numberEntered = getValidNumberInput(scanner, promptUser);
+            if (numberEntered.compareTo(BigDecimal.ZERO) < 0) {
+                System.out.println("A number greater than Zero is required for Square Root Calculations");
+            }
+        } while (numberEntered.compareTo(BigDecimal.ZERO) < 0);
+
+        return numberEntered;
+    }
+
+    private static BigDecimal calculateSquareRoot(BigDecimal number) {
+        if (number.equals(BigDecimal.ZERO)) {
+            return BigDecimal.ZERO;
+        }
+
+        // Newton's method for square root
+        BigDecimal x = number;
+        BigDecimal y = number.add(BigDecimal.ONE).divide(BigDecimal.valueOf(2), 10, RoundingMode.HALF_UP);
+
+        // Iterate until we reach desired precision
+        while (y.compareTo(x) < 0) {
+            x = y;
+            y = x.add(number.divide(x, 10, RoundingMode.HALF_UP))
+                    .divide(BigDecimal.valueOf(2), 10, RoundingMode.HALF_UP);
+        }
+
+        return x.setScale(2, RoundingMode.HALF_UP);
     }
 
 }
