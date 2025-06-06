@@ -183,5 +183,4 @@ public class CalculatorProgramMethods {
 
         return x.setScale(2, RoundingMode.HALF_UP);
     }
-
 }
