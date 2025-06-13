@@ -18,7 +18,7 @@ public enum Beverages {
     Beverages(String displayBeverageType, double unitPrice, int customerLoyaltyPoints) {
         this.displayBeverageType = displayBeverageType;
         this.unitPrice = unitPrice;
-        this.customerLoyaltyPoints = 0;
+        this.customerLoyaltyPoints = customerLoyaltyPoints;
     }
 
 

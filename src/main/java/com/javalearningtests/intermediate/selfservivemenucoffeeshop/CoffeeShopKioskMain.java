@@ -30,11 +30,15 @@ public class CoffeeShopKioskMain {
     public static void main(String[] args) {
         System.out.println("----------Welcome to you Favorite Coffee Shop Kiosk----------");
 
+        Scanner scanner = new Scanner(System.in);
         CustomerActivities customerActivities = new CustomerActivities();
 
         customerActivities.addCustomer();
 
-        customerActivities.showMenu();
+        int option = scanner.nextInt();
+        scanner.nextLine();
+
+        customerActivities.orderBeverage();
 
     }
 

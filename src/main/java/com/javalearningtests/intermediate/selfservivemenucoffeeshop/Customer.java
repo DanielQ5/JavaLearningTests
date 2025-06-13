@@ -7,11 +7,13 @@ import lombok.Setter;
 @Setter
 
 public class Customer {
+    private String customerID;
     private String customerName;
     private int customerPoints;
 
 
-    public Customer(String customerName) {
+    public Customer(String customerID) {
+        this.customerID = customerID;
         this.customerName = customerName;
         this.customerPoints = 0;
     }
