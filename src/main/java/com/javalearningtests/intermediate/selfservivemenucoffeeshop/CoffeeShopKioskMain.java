@@ -26,19 +26,49 @@ import java.util.Scanner;
 public class CoffeeShopKioskMain {
 
 
-
     public static void main(String[] args) {
         System.out.println("----------Welcome to you Favorite Coffee Shop Kiosk----------");
 
         Scanner scanner = new Scanner(System.in);
         CustomerActivities customerActivities = new CustomerActivities();
 
-        customerActivities.addCustomer();
+        String customerId = customerActivities.addCustomer();
 
-        int option = scanner.nextInt();
-        scanner.nextLine();
+        Customer customer = new Customer(customerId);
 
-        customerActivities.orderBeverage();
+
+        boolean isCustomerExiting = true;
+
+        while (isCustomerExiting) {
+            try {
+
+                int option = scanner.nextInt();
+                scanner.nextLine();
+
+                switch (option) {
+                    case 1:
+                        customerActivities.orderBeverage(customerId);
+                        customerActivities.showMenu();
+                        break;
+
+                    case 2:
+                        customerActivities.displayCustomerPointsBalance(customerId);
+                        customerActivities.showMenu();
+                        break;
+
+                    case 3:
+                        customerActivities.paymentAndCheckout();
+                        return;
+
+                    default:
+                        System.out.println("Try again. Please enter a valid option.");
+                }
+            } catch (Exception e) {
+                System.out.println("Entry not Supported, please try again!");
+                customerActivities.showMenu();
+                scanner.next();
+            }
+        }
 
     }
 

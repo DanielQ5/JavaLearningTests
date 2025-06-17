@@ -14,7 +14,6 @@ public class Customer {
 
     public Customer(String customerID) {
         this.customerID = customerID;
-        this.customerName = customerName;
         this.customerPoints = 0;
     }
 }
