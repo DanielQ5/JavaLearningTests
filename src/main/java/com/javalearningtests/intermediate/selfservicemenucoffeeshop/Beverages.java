@@ -1,7 +1,6 @@
-package com.javalearningtests.intermediate.selfservivemenucoffeeshop;
+package com.javalearningtests.intermediate.selfservicemenucoffeeshop;
 
 import lombok.Getter;
-import lombok.Setter;
 
 @Getter
 
@@ -15,7 +14,7 @@ public enum Beverages {
     private final double unitPrice;
     private final int customerLoyaltyPoints;
 
-    Beverages(String displayBeverageType, double unitPrice, int customerLoyaltyPoints) {
+    Beverages (String displayBeverageType, double unitPrice, int customerLoyaltyPoints) {
         this.displayBeverageType = displayBeverageType;
         this.unitPrice = unitPrice;
         this.customerLoyaltyPoints = customerLoyaltyPoints;

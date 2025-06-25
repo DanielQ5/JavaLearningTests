@@ -1,4 +1,4 @@
-package com.javalearningtests.intermediate.selfservivemenucoffeeshop;
+package com.javalearningtests.intermediate.selfservicemenucoffeeshop;
 
 import lombok.Getter;
 import lombok.Setter;

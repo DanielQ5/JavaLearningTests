@@ -1,4 +1,4 @@
-package com.javalearningtests.intermediate.selfservivemenucoffeeshop;
+package com.javalearningtests.intermediate.selfservicemenucoffeeshop;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,7 +17,6 @@ public class CustomerActivities {
 
 
     public String addCustomer() {
-
         System.out.print("Hi! What's your name?");
 
         String customerName = scanner.nextLine();
@@ -69,6 +68,7 @@ public class CustomerActivities {
             case 2:
                 Beverages latte = Beverages.LATTE;
                 orderSubtotal(Beverages.LATTE.getUnitPrice());
+                calculateCustomerPointsBalance(customerId, customersList, latte.getCustomerLoyaltyPoints());
             {
                 System.out.println("You're about to enjoy a " + latte.getDisplayBeverageType() + ", splendid choice! That will be: " + "$" + latte.getUnitPrice());
                 System.out.println("You have accumulated: " + latte.getCustomerLoyaltyPoints() + " points for your " + latte.getDisplayBeverageType() + ".");
@@ -78,6 +78,7 @@ public class CustomerActivities {
             case 3:
                 Beverages icedTea = Beverages.ICED_TEA;
                 orderSubtotal(Beverages.ICED_TEA.getUnitPrice());
+                calculateCustomerPointsBalance(customerId, customersList, icedTea.getCustomerLoyaltyPoints());
             {
                 System.out.println("You chose an " + icedTea.getDisplayBeverageType() + ", great choice to fight this heat! That will be: " + "$" + icedTea.getUnitPrice());
                 System.out.println("You have accumulated: " + icedTea.getCustomerLoyaltyPoints() + " points for your " + icedTea.getDisplayBeverageType() + ".");
@@ -87,6 +88,7 @@ public class CustomerActivities {
             case 4:
                 Beverages cappuccino = Beverages.CAPPUCCINO;
                 orderSubtotal(Beverages.CAPPUCCINO.getUnitPrice());
+                calculateCustomerPointsBalance(customerId, customersList, cappuccino.getCustomerLoyaltyPoints());
             {
                 System.out.println("Delicious " + cappuccino.getDisplayBeverageType() + " coming your way! That will be: " + "$" + cappuccino.getUnitPrice());
                 System.out.println("You have accumulated: " + cappuccino.getCustomerLoyaltyPoints() + " points for your " + cappuccino.getDisplayBeverageType() + ".");
@@ -109,9 +111,11 @@ public class CustomerActivities {
         System.out.println("Certainly! So far you have accumulated: " + customersList.get(customerId) + " points.");
     }
 
-    public void paymentAndCheckout() {
+    public void paymentAndCheckout(String customerId) {
         double orderTotal = orderTotal();
+        customerPointsOrderTotal(customerId);
         System.out.println("Thank you for your business! Have a great day.");
+        System.out.println();
     }
 
 
@@ -127,6 +131,11 @@ public class CustomerActivities {
         System.out.println("Your order total is: $" + totalCost);
 
         return totalCost;
+    }
+
+    public void customerPointsOrderTotal (String customerId){
+        System.out.println("You accumulated " + customersList.get(customerId) + " points with today's purchase!");
+
     }
 
     public String calculateCustomerPointsBalance(String customerId, Map<String, Integer> customersList, int customerLoyaltyPoints) {

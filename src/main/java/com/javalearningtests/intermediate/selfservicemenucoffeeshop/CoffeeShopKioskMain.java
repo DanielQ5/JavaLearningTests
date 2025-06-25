@@ -1,4 +1,4 @@
-package com.javalearningtests.intermediate.selfservivemenucoffeeshop;
+package com.javalearningtests.intermediate.selfservicemenucoffeeshop;
 
 /*Intermediate Java Test 3: Coffee Shop Kiosk – Menu with Switch Case, Enums & OOP
 User Story:
@@ -57,7 +57,7 @@ public class CoffeeShopKioskMain {
                         break;
 
                     case 3:
-                        customerActivities.paymentAndCheckout();
+                        customerActivities.paymentAndCheckout(customerId);
                         return;
 
                     default:
@@ -69,7 +69,5 @@ public class CoffeeShopKioskMain {
                 scanner.next();
             }
         }
-
     }
-
 }
