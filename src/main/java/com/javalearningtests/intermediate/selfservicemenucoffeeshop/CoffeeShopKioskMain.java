@@ -21,6 +21,8 @@ Input Validation	Graceful handling of typos or invalid selections.
 Output Summary	After exit, show a summary of total orders, total cost, and loyalty points. */
 
 
+import com.javalearningtests.intermediate.calculatorprogram.CalculatorProgramFileManager;
+
 import java.util.Scanner;
 
 public class CoffeeShopKioskMain {
@@ -31,6 +33,7 @@ public class CoffeeShopKioskMain {
 
         Scanner scanner = new Scanner(System.in);
         CustomerActivities customerActivities = new CustomerActivities();
+        CoffeeShopFileManager coffeeShopFileManager = new CoffeeShopFileManager();
 
         String customerId = customerActivities.addCustomer();
 
@@ -58,6 +61,7 @@ public class CoffeeShopKioskMain {
 
                     case 3:
                         customerActivities.paymentAndCheckout(customerId);
+                        customerActivities.saveToFile(customerId, coffeeShopFileManager, customerActivities.getCustomersList(), customerActivities.getTotalCost());
                         return;
 
                     default:

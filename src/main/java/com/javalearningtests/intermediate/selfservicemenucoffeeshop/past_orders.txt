@@ -1,0 +1,14 @@
+TN45
+TN45
+---------------------
+Purchase Entry for:
+Customer ID: TN45
+Total Purchase Amount: $13.4
+Total Points accumulated: 25
+
+---------------------
+Purchase Entry for:
+Customer ID: 12345678
+Total Purchase Amount: $3.0
+Total Points accumulated: 5
+

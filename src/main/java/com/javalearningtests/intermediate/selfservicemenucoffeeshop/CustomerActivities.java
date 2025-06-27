@@ -1,10 +1,17 @@
 package com.javalearningtests.intermediate.selfservicemenucoffeeshop;
 
+import com.javalearningtests.intermediate.calculatorprogram.CalculatorProgramFileManager;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+
+@Getter
+@Setter
 
 public class CustomerActivities {
 
@@ -112,10 +119,29 @@ public class CustomerActivities {
     }
 
     public void paymentAndCheckout(String customerId) {
-        double orderTotal = orderTotal();
+        orderTotal();
         customerPointsOrderTotal(customerId);
         System.out.println("Thank you for your business! Have a great day.");
-        System.out.println();
+    }
+
+    public void saveToFile(String customerId, CoffeeShopFileManager fileManager, Map<String, Integer> customersList, double totalCost) {
+
+        String result = saveToFileTemplate(customerId,  customersList , totalCost);
+
+        fileManager.logResult(result);
+
+    }
+
+    public String saveToFileTemplate(String customerId, Map<String, Integer> customersList, double totalCost) {
+        StringBuilder stringBuilder = new StringBuilder();
+
+        stringBuilder.append("---------------------\n");
+        stringBuilder.append("Purchase Entry for:\n");
+        stringBuilder.append("Customer ID: ").append(customerId).append("\n");
+        stringBuilder.append("Total Purchase Amount: $").append(totalCost).append("\n");
+        stringBuilder.append("Total Points accumulated: ").append(customersList.get(customerId)).append("\n");
+
+        return stringBuilder.toString();
     }
 
 
@@ -127,13 +153,11 @@ public class CustomerActivities {
         totalCost += beveragesPrice;
     }
 
-    public double orderTotal() {
+    public void orderTotal() {
         System.out.println("Your order total is: $" + totalCost);
-
-        return totalCost;
     }
 
-    public void customerPointsOrderTotal (String customerId){
+    public void customerPointsOrderTotal(String customerId) {
         System.out.println("You accumulated " + customersList.get(customerId) + " points with today's purchase!");
 
     }
