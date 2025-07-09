@@ -23,21 +23,26 @@ Output Summary	After exit, show a summary of total orders, total cost, and loyal
 
 import com.javalearningtests.intermediate.calculatorprogram.CalculatorProgramFileManager;
 
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class CoffeeShopKioskMain {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         System.out.println("----------Welcome to you Favorite Coffee Shop Kiosk----------");
 
         Scanner scanner = new Scanner(System.in);
         CustomerActivities customerActivities = new CustomerActivities();
         CoffeeShopFileManager coffeeShopFileManager = new CoffeeShopFileManager();
+        coffeeShopFileManager.getFileName();
+
+        coffeeShopFileManager.loadKeyValuePairs(coffeeShopFileManager.getFileName(), customerActivities.getCustomersList());
+        System.out.println("Loaded customers: " + customerActivities.getCustomersList());
 
         String customerId = customerActivities.addCustomer();
-
         Customer customer = new Customer(customerId);
+
 
 
         boolean isCustomerExiting = true;
@@ -62,6 +67,7 @@ public class CoffeeShopKioskMain {
                     case 3:
                         customerActivities.paymentAndCheckout(customerId);
                         customerActivities.saveToFile(customerId, coffeeShopFileManager, customerActivities.getCustomersList(), customerActivities.getTotalCost());
+                        coffeeShopFileManager.retrieveResult();
                         return;
 
                     default:

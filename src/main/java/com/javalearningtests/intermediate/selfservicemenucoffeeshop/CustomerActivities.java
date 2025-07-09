@@ -24,6 +24,8 @@ public class CustomerActivities {
 
 
     public String addCustomer() {
+
+
         System.out.print("Hi! What's your name?");
 
         String customerName = scanner.nextLine();
@@ -34,12 +36,16 @@ public class CustomerActivities {
 
         String customerId = scanner.nextLine();
 
-        Customer customer = new Customer(customerId);
+        System.out.println("Looking for customer: '" + customerId + "'");
+        System.out.println("Customers in map: " + customersList.keySet());
 
-        customersList.put(customerId, customer.getCustomerPoints());
-
-        System.out.println("\nWe have added you to our Database!");
-
+        if (customersList.containsKey(customerId)) {
+            System.out.println("Welcome Back!");
+        } else {
+            Customer customer = new Customer(customerId);
+            customersList.putIfAbsent(customerId, customer.getCustomerPoints());
+            System.out.println("\nWe have added you to our Database!");
+        }
         showMenu();
 
         return customerId;
@@ -51,6 +57,15 @@ public class CustomerActivities {
         System.out.println("2. Check my Loyalty Points Balance.");
         System.out.println("3. Payment and Checkout.");
     }
+
+    //TODO fix the map situation when reading and writing.
+
+//    public void verifyCustomerFound ( Map<String, Integer> customersList, String customerId) {
+//
+//        if (customersList.containsKey(customerId)) {
+//            System.out.println("Welcome Back!");
+//        }
+//    }
 
     public void orderBeverage(String customerId) {
         System.out.println("Which beverage can I get you today? ");
@@ -100,7 +115,6 @@ public class CustomerActivities {
                 System.out.println("Delicious " + cappuccino.getDisplayBeverageType() + " coming your way! That will be: " + "$" + cappuccino.getUnitPrice());
                 System.out.println("You have accumulated: " + cappuccino.getCustomerLoyaltyPoints() + " points for your " + cappuccino.getDisplayBeverageType() + ".");
             }
-
         }
     }
 
@@ -126,7 +140,7 @@ public class CustomerActivities {
 
     public void saveToFile(String customerId, CoffeeShopFileManager fileManager, Map<String, Integer> customersList, double totalCost) {
 
-        String result = saveToFileTemplate(customerId,  customersList , totalCost);
+        String result = saveToFileTemplate(customerId, customersList, totalCost);
 
         fileManager.logResult(result);
 
@@ -136,10 +150,10 @@ public class CustomerActivities {
         StringBuilder stringBuilder = new StringBuilder();
 
         stringBuilder.append("---------------------\n");
-        stringBuilder.append("Purchase Entry for:\n");
-        stringBuilder.append("Customer ID: ").append(customerId).append("\n");
-        stringBuilder.append("Total Purchase Amount: $").append(totalCost).append("\n");
-        stringBuilder.append("Total Points accumulated: ").append(customersList.get(customerId)).append("\n");
+        stringBuilder.append("Purchase Entry for:(Customer ID:Loyalty Points)\n");
+        stringBuilder.append(customerId).append(":").append(customersList.get(customerId)).append("\n");
+        stringBuilder.append("Last Purchase Amount: $").append(totalCost).append("\n");
+        stringBuilder.append("Points accumulated for last purchase: ").append(customersList.get(customerId)).append("\n");
 
         return stringBuilder.toString();
     }
