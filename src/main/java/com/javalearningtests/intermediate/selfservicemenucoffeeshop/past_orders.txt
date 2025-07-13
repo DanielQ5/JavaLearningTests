@@ -1,29 +1,31 @@
----------------------
-Purchase Entry for:(Customer ID:Loyalty Points)
-TN452:24
-Total Purchase Amount: $13.75
-Total Points accumulated: 24
 
 ---------------------
 Purchase Entry for:(Customer ID:Loyalty Points)
-TN485:13
-Last Purchase Amount: $8.75
-Points accumulated for last purchase: 13
+TN452:18
+Last Purchase Amount: $9.65
+Points accumulated for last purchase: 36
+
+---------------------
+Purchase Entry for:(Customer ID:Loyalty Points)
+7856:25
+Last Purchase Amount: $13.4
+Points accumulated for last purchase: 25
+
+---------------------
+Purchase Entry for:(Customer ID:Loyalty Points)
+7856:34
+Last Purchase Amount: $7.5
+Points accumulated for last purchase: 9
+
 ---------------------
 Purchase Entry for:(Customer ID:Loyalty Points)
 TN452:34
+Last Purchase Amount: $11.25
+Points accumulated for last purchase: 16
+
+---------------------
+Purchase Entry for:(Customer ID:Loyalty Points)
+TN452:44
 Last Purchase Amount: $4.15
-Points accumulated for last purchase: 34
-
----------------------
-Purchase Entry for:(Customer ID:Loyalty Points)
-TN452:41
-Last Purchase Amount: $3.75
-Points accumulated for last purchase: 41
-
----------------------
-Purchase Entry for:(Customer ID:Loyalty Points)
-TN452:41
-Last Purchase Amount: $0.0
-Points accumulated for last purchase: 41
+Points accumulated for last purchase: 10
 

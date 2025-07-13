@@ -36,14 +36,12 @@ public class CoffeeShopKioskMain {
         CustomerActivities customerActivities = new CustomerActivities();
         CoffeeShopFileManager coffeeShopFileManager = new CoffeeShopFileManager();
         coffeeShopFileManager.getFileName();
+        int totalPointsEarned = customerActivities.totalPointsEarned;
 
         coffeeShopFileManager.loadKeyValuePairs(coffeeShopFileManager.getFileName(), customerActivities.getCustomersList());
-        System.out.println("Loaded customers: " + customerActivities.getCustomersList());
 
         String customerId = customerActivities.addCustomer();
         Customer customer = new Customer(customerId);
-
-
 
         boolean isCustomerExiting = true;
 
@@ -65,9 +63,8 @@ public class CoffeeShopKioskMain {
                         break;
 
                     case 3:
-                        customerActivities.paymentAndCheckout(customerId);
-                        customerActivities.saveToFile(customerId, coffeeShopFileManager, customerActivities.getCustomersList(), customerActivities.getTotalCost());
-                        coffeeShopFileManager.retrieveResult();
+                        customerActivities.paymentAndCheckout();
+                        customerActivities.saveToFile(customerId, coffeeShopFileManager, customerActivities.getCustomersList(), customerActivities.getTotalCost(), customerActivities.totalPointsEarned );
                         return;
 
                     default:
