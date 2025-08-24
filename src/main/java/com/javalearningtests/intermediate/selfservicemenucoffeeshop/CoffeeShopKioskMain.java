@@ -17,7 +17,7 @@ Add to Cart Loop: Loop through multiple orders until the user exits.
 Track Total Orders (New)	Keep a session count of all drinks ordered.
 Simulate Loyalty Points (New)	Increment points per order and show points summary after each transaction.
 Unit Test	Write one unit test validating price or loyalty point logic.
-Input Validation	Graceful handling of typos or invalid selections.
+Input Validation	Graceful handling of typos or    invalid selections.
 Output Summary	After exit, show a summary of total orders, total cost, and loyalty points. */
 
 
