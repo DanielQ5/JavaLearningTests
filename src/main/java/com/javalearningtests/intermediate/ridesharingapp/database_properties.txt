@@ -1,0 +1,4 @@
+db.url=jdbc:postgresql://localhost:5432/user_ridesharingapp
+db.username=postgres
+db.password=2356
+db.driver=org.postgresql.Driver
